@@ -1,0 +1,10 @@
+:root {
+  /* Colors */
+  --bg: #333;
+  --main-color: white;
+  --alt-color: #7289da;
+
+  /* Fonts */
+  --font: ;
+  --title-font: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
