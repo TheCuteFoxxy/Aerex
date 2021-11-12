@@ -1,22 +1,19 @@
 const express = require('express');
 const app = express();
-const dir = { root: `${__dirname}/static` };
-app.use(express.static("external"));
+
+app.set('view engine', 'ejs');
+app.set('views', 'views')
 
 app.get('/', (req, res) => {
-  res.sendFile("/index.html", dir);
+  res.render("index");
 });
 
 app.get("/invite", (req, res) => {
   res.redirect("https://discord.com/oauth2/authorize?client_id=563186108712878090&permissions=805694591&scope=bot%20applications.commands");
 });
 
-app.get("*", (req, res) => {
-  res.send("404 - Page not Found!").status(404)
-});
-
-app.post("*", (req, res) => {
-  res.json({ "error": "Page not Found! "});
+app.all("*", (req, res) => {
+  res.status(404).send({ status: 404, message: 'Not Found'})
 });
 
 app.listen(3000, () => {
