@@ -5,7 +5,8 @@ app.set('view engine', 'ejs');
 app.set('views', 'views')
 
 app.get('/', (req, res) => {
-  res.render("index");
+  let guildCount = '315+'
+  res.render("index", { guildCount });
 });
 
 app.get("/invite", (req, res) => {
